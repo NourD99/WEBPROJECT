@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="mysheet.css">
+<style>
+    
+
+p{
+    text-align: center;
+    color: rgb(74, 0, 143);
+    background-color: aqua;
+}
+#dalinda{
+    color:pink ;
+    text-align: left;
+    background-color: purple;
+}
+.cls{
+    text-decoration: underline;
+    background-color:yellow ;
+}
+p.right{
+    
+    text-align:right;
+    color: blueviolet;
+}
+p.big{
+    font-size: 200%;
+background-color: orange;
+}
+div *{
+    background-color: red;
+}
+table{
+    border-color: orange;
+    border-collapse:separate;
+
+}
+td{
+    color: blueviolet;
+    background-color: brown;
+}
+#t2:hover{
+    background-color:aqua ;
+
+}
+
+
+</style>
+</head>
+
+<body>
+<p style="color:yellowgreen; background-color: brown;"> welcome you;)</p>
+<p> hey,welcome in web</p>
+<p id="dalinda"> dalin ahmad alomarii</p>
+<h3 class="cls"> SHETTA</h3>
+<h1 class="center"> fffffffff</h1>
+<h1 class="cls"> very</h1>
+<p class="right"> wow</p>
+<h1 id="dalinda"> dalindaaaaa </h1>
+<h1> fifa </h1>
+<p class="big"> hi</p>
+<p class=" right big"> hola amego!</p>
+<div> 
+    <p>  hello hello hello </p>
+</div>
+
+
+<table border="2">
+    <tr>
+        <td id="t2"> 1 </td>
+        <td> 2 </td>
+
+    </tr>
+    <tr>
+        <td> 3 </td>
+        <td> 4</td>
+
+    </tr>
+
+
+</body>
+</html>

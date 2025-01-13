@@ -1,0 +1,69 @@
+body {
+    font-style:oblique;
+    background-image: url(_محل\ \(1\).webp);
+}
+ 
+.background-container {
+    width: 100%;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ 
+header {
+    background-color: #66676a;
+    color: rgb(230, 220, 220);
+    padding: 30px;
+    text-align: center;
+    
+}
+ 
+nav {/*cl*/
+    background-color: #5f1349;
+    font-size: 50%;
+}
+ 
+nav a {
+    color:white;
+    padding:40px;
+    margin:40px ;
+}
+ 
+nav a:hover {
+    background-color: #ba325fd2;
+}
+ 
+.hero {/* be unique*/
+    text-align: center;
+    padding: 50px ;
+    color: white;
+}
+ 
+.hero h1 {/* be unique*/
+    font-size: 50px;
+    
+    
+}
+ 
+.hero p {
+    font-size: 30px;
+    padding:1px ;
+    margin: 10px ;
+    background-color: #5f1349;
+}
+ 
+
+ 
+.footer {
+    background-color: #979dad;
+    
+    color: white;
+    text-align: right;
+  padding: 5px;
+  position: fixed;
+   bottom: 0;
+    width:100%;
+ 
+ 
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Fabric Calculator</title>
+    <style>
+        body {
+            background-color: #f0f8ff; 
+            font-family: Arial, sans-serif;
+            color: #333; 
+            padding: 20px;
+        }
+        h1 {
+            color: #e15886; 
+        }
+        .error {
+            color: red;
+        }
+        input, button, textarea, select {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #e15886; /* Green background */
+            color: white; /* White text */
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color:purple; /* Darker green on hover */
+        }
+        textarea {
+            width: 100%;
+            height: 170px;
+            resize: none;
+        }
+    </style>
+    <script>
+       
+        function calculateFabric(height, weight, gender) {
+            var fabricNeeded;
+            if (gender == 'male') {
+                fabricNeeded = (height * 0.5) + (weight * 0.2);
+            } else if (gender == 'female') {
+                fabricNeeded = (height * 0.7) + (weight * 0.3);
+            } else {
+                return "Invalid gender";
+            }
+            return (fabricNeeded * 100) / 100 + " meters"; 
+        }
+
+        function updateDateTime() {
+         var now = new Date();
+        var dateTimeString = now.toLocaleDateString() + " " + now.toLocaleTimeString();
+        document.getElementById('date-time').innerHTML = dateTimeString;
+    }
+    setInterval(updateDateTime, 1000);
+        function handleSubmit(event) {
+            event.preventDefault();
+            var height = +document.getElementById('height').value || 0;
+            var weight = +document.getElementById('weight').value || 0;
+            var errorSpan = document.getElementById('error');
+            var heightErrorSpan = document.getElementById('height-error');
+
+            if (!height || height <= 0) {
+                heightErrorSpan.innerHTML = "Please enter a valid height greater than 0.";
+                return;
+            } else {
+                heightErrorSpan.innerHTML = "";
+            }
+
+            if (!weight || weight <= 0) {
+                errorSpan.innerHTML = "Please enter a valid weight greater than 0.";
+                return;
+            } else {
+                errorSpan.innerHTML = "";
+            }
+
+            var gender;
+            if (document.getElementById('male').checked) {
+                gender = document.getElementById('male').value;
+            } else if (document.getElementById('female').checked) {
+                gender = document.getElementById('female').value;
+            }
+
+            const fabric = calculateFabric(height, weight, gender); 
+            document.getElementById('result').value = "u entered :\n" + "Height: " + height + " cm\n" +
+             "Weight: " + weight + " kg\n" + "Gender: " + gender + "\n\n" + "Calculation:\n" + "You require " + fabric + " of fabric.";
+        }
+
+     
+    </script>
+</head>
+<body>
+    <h1>Fabric Calculator</h1>
+    <p id="date-time"></p>
+    <form onsubmit="handleSubmit(event)">
+       Height (cm):
+        <input type="number" id="height" name="height" required>
+        <span id="height-error" class="error"></span><br>
+       Weight (kg):
+        <input type="number" id="weight" name="weight" required><br>
+        <span id="error" class="error"></span><br>
+       Gender:
+        <input type="radio" id="male" name="gender" value="male" required>
+       Male
+        <input type="radio" id="female" name="gender" value="female" required>
+       Female<br>
+        <button type="submit">Calculate</button>
+    </form>
+    Result:
+    <textarea id="result" readonly></textarea>
+
+  
+
+    <form style="text-align: center;">
+        <b><a href="/index.html" class="btn btn-dark">BACK TO HOMEPAGE</a></b>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
